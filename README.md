@@ -1,55 +1,44 @@
-# CodeAlpha Data Science Internship - Task 1: Iris Flower Classification
+# Iris Flower Classification
 
-## 📌 Project Overview
-This project is completed as part of the **CodeAlpha Data Science Internship Program**. The goal is to build a machine learning model capable of classifying Iris flower species (*Setosa, Versicolor, and Virginica*) based on sepal and petal measurements (length and width).
+This project was built for the CodeAlpha Data Science Internship. The goal is to classify Iris flowers into three species (Setosa, Versicolor, and Virginica) based on sepal and petal measurements.
 
----
-
-## 🛠️ Tech Stack & Libraries
-- **Language:** Python
-- **Data Manipulation & Analysis:** `pandas`, `numpy`
-- **Visualization:** `matplotlib`, `seaborn`
-- **Machine Learning:** `scikit-learn`
-
----
-
-## 🔬 Dataset Description
-The Iris dataset consists of **150 samples** across **3 classes** (50 samples per class):
-1. **Iris-setosa**
-2. **Iris-versicolor**
-3. **Iris-virginica**
-
-### Features:
+## Dataset
+The dataset contains 150 samples with four numerical features:
 - Sepal Length (cm)
 - Sepal Width (cm)
 - Petal Length (cm)
 - Petal Width (cm)
+- Species (Target: Setosa, Versicolor, Virginica)
 
----
+## Methodology
+1. **Exploratory Data Analysis**: Checked feature distributions, pairwise relationships, and correlations.
+2. **Preprocessing**: Split the data into 80% training and 20% testing sets using stratified sampling, then scaled the features with `StandardScaler`.
+3. **Model Training & Comparison**: Evaluated multiple classifiers including Logistic Regression, K-Nearest Neighbors, Decision Tree, Random Forest, and Support Vector Machine (SVM).
+4. **Validation**: Used 5-fold cross-validation on the training set and evaluated on the unseen test set.
 
-## 📊 Exploratory Data Analysis & Visualizations
-The script generates and saves the following visualizations in `plots/`:
-- **`pairplot.png`**: Multi-dimensional feature scatter plots highlighting class separability.
-- **`correlation_heatmap.png`**: Correlation analysis showing strong relationships between petal dimensions and species differentiation.
-- **`confusion_matrix.png`**: Detailed true vs. predicted species performance matrix.
+## Results
+- **Support Vector Machine (SVM)** gave the best performance with **100% test accuracy** and a 5-fold cross-validation score of **97.5%**.
+- Key plots generated during analysis are stored in the `plots/` folder:
+  - `pairplot.png`: Pairwise feature distributions by species.
+  - `correlation_heatmap.png`: Correlation matrix of measurements.
+  - `confusion_matrix.png`: Prediction performance matrix.
 
----
+## Project Structure
+```
+├── plots/
+│   ├── pairplot.png
+│   ├── correlation_heatmap.png
+│   └── confusion_matrix.png
+├── iris_classification.py
+├── Iris_Flower_Classification.ipynb
+├── iris_dataset.csv
+├── requirements.txt
+└── README.md
+```
 
-## 🤖 Models Trained & Evaluated
-Multiple supervised classification algorithms were trained, benchmarked, and validated using 5-fold cross-validation:
-1. **Logistic Regression**
-2. **K-Nearest Neighbors (KNN)**
-3. **Decision Tree Classifier**
-4. **Support Vector Machine (SVM)**
-5. **Random Forest Classifier**
-
----
-
-## 🚀 How to Run
+## How to Run
 ```bash
-# 1. Navigate to the task directory
-cd Task_1_Iris_Flower_Classification
-
-# 2. Run the classification script
+pip install -r requirements.txt
 python iris_classification.py
 ```
+You can also run through `Iris_Flower_Classification.ipynb` using Jupyter Notebook or Google Colab.

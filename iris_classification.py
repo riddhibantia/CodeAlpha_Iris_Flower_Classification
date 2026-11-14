@@ -42,7 +42,7 @@ def main():
     print("\nClass distribution:")
     print(df['species'].value_counts())
 
-    # 3. Visualizations (Saved for GitHub README / LinkedIn showcase)
+    # 3. Visualizations
     plots_dir = os.path.join(data_dir, "plots")
     os.makedirs(plots_dir, exist_ok=True)
 
